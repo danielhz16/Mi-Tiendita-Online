@@ -17,7 +17,7 @@ Este proyecto consiste en una tienda online que incluye autenticación de usuari
 - **Multer**: Middleware para manejar la subida de imágenes y otros archivos.
 
 
-### Frontend:
+### Frontend (aún sin subir al repositorio):
 - **React** con TypeScript: Librería de JavaScript para construir interfaces de usuario interactivas.
 - **Styled Components**: Para el estilo de componentes React con CSS en JS.
 - **ReactPrime**: Biblioteca de componentes de interfaz de usuario para React.
