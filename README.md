@@ -1,13 +1,15 @@
-# Mi-Tiendita-Online | My-Online-Shop
+# Mi-Tiendita-Online
 
-Proyecto para el reto Web 360 | Project for Web 360 Challenge
+## Proyecto para el reto Web 360
 
-Este proyecto consiste en una tienda online que incluye autenticación de usuarios, rutas protegidas y un diseño moderno y responsivo. Desarrollado con una arquitectura de backend y frontend que se comunica de manera eficiente para proporcionar una experiencia fluida.
+Este proyecto consiste en una tienda online que incluye autenticación de usuarios y rutas protegidas.
 
-## Tecnologías / Technologies
+---
+
+## Tecnologías
 
 ### Backend:
-- **Express.js**: Framework minimalista para Node.js.
+- **Express.js**: Framework  para Node.js.
 - **MSSQL**: Base de datos SQL Server conectada a través de **mssql**.
 - **JWT (JSON Web Token)**: Autenticación segura para usuarios.
 - **Bcrypt**: Cifrado de contraseñas para mayor seguridad.
@@ -21,8 +23,8 @@ Este proyecto consiste en una tienda online que incluye autenticación de usuari
 - **Axios**: Para realizar solicitudes HTTP al backend.
 - **Rutas protegidas**: Control de acceso a ciertas rutas según el rol del usuario.
 
-## Instalación / Installation
+## Instalación
 
 1. Clona este repositorio:
    ```bash
-   
+
