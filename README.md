@@ -30,5 +30,7 @@ Este proyecto consiste en una tienda online que incluye autenticación de usuari
 1. Clona este repositorio:
    ```bash
    https://github.com/danielhz16/Mi-Tiendita-Online.git
+2.Script de la base de datos 
+ https://drive.google.com/file/d/1MgHGoQOn2FYdmQEj1JFVuZJsP5T7Cr64/view?usp=drive_link
    
 
