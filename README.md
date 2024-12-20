@@ -9,11 +9,13 @@ Este proyecto consiste en una tienda online que incluye autenticación de usuari
 ## Tecnologías
 
 ### Backend:
-- **Express.js**: Framework  para Node.js.
-- **MSSQL**: Base de datos SQL Server conectada a través de **mssql**.
-- **JWT (JSON Web Token)**: Autenticación segura para usuarios.
-- **Bcrypt**: Cifrado de contraseñas para mayor seguridad.
-- **Middleware**: Rutas protegidas mediante autenticación y roles.
+- **Express.js**: Framework para Node.js utilizado para crear el servidor y manejar las rutas.
+- **MSSQL**: Base de datos SQL Server conectada a través del paquete **mssql**.
+- **JWT (JSON Web Token)**: Implementación de autenticación segura para usuarios mediante tokens.
+- **Bcrypt**: Librería para cifrar y verificar contraseñas de manera segura.
+- **Middleware**: Rutas protegidas con autenticación y control de roles de usuario.
+- **Multer**: Middleware para manejar la subida de imágenes y otros archivos.
+
 
 ### Frontend:
 - **React** con TypeScript: Librería de JavaScript para construir interfaces de usuario interactivas.
