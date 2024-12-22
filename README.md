@@ -49,6 +49,6 @@ export const getCart = async (req, res) => {
    https://github.com/danielhz16/Mi-Tiendita-Online.git
 
 2.Script de la base de datos 
- https://drive.google.com/file/d/1MgHGoQOn2FYdmQEj1JFVuZJsP5T7Cr64/view?usp=drive_link
+https://drive.google.com/file/d/1MgHGoQOn2FYdmQEj1JFVuZJsP5T7Cr64/view?usp=drive_link](https://drive.google.com/file/d/1XbDtVE-0ZEAsXA6MhxhQapbANYTX9y1A/view?usp=drive_link
    
 
