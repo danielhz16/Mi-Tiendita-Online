@@ -14,8 +14,8 @@
 - **Multer**: Middleware para manejar la subida de imágenes y otros archivos.
 
 ## Probar Backend
-
-Para asegurar la facilidad en las pruebas, se ha nombrado a los controladores siguiendo la misma estructura de las rutas correspondientes. Esto facilita la comprensión del flujo y la localización de cada controlador.
+Para asegurar la facilidad en las pruebas, se ha nombrado a los 
+controladores con el mismo nombre de sus rutas en el servidor(ruta/nombreDeControlador).
 
 ### Ejemplo de Controlador:
 ```js
@@ -29,7 +29,8 @@ export const getCart = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
-
+ ##En este caso la ruta es:
+  http://localhost:3000/getCart
 
 ### Recomendación:  
 - Reemplaza las credenciales del archivo `.env` (que ya incluye configuraciones predeterminadas para SQL Server al usar Docker) por las correctas correspondientes a tu base de datos SQL Server. Al final del documento se adjunta el enlace al script para configurar la base de datos SQL Server.
