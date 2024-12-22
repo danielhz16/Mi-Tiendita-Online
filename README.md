@@ -29,6 +29,7 @@ export const getCart = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+```
  ##En este caso la ruta es:
   solicitud get
   http://localhost:3000/getCart
