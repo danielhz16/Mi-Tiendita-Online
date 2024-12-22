@@ -3,6 +3,14 @@
 ## Proyecto para el reto Web 360
 ---
 
+#importante
+
+**pnpm**: Este proyecto utiliza pnpm como gestor de paquetes.  
+Para iniciar el servidor, usa el siguiente comando:
+
+```bash
+pnpm run dev
+
 ## Tecnologías
 
 ### Backend:
