@@ -16,10 +16,10 @@
 ## Probar Backend
 Para asegurar la facilidad en las pruebas, se ha nombrado a los 
 controladores con el mismo nombre de sus rutas en el servidor(ruta/nombreDeControlador).
-
+El comentario indica el método para realizar la solicitud 
 ### Ejemplo de Controlador:
 ```js
-// Método GET
+// get
 export const getCart = async (req, res) => {
     const id_user = req.user.id;
     try {
@@ -30,8 +30,9 @@ export const getCart = async (req, res) => {
     }
 };
  ##En este caso la ruta es:
+  solicitud get
   http://localhost:3000/getCart
-
+  
 ### Recomendación:  
 - Reemplaza las credenciales del archivo `.env` (que ya incluye configuraciones predeterminadas para SQL Server al usar Docker) por las correctas correspondientes a tu base de datos SQL Server. Al final del documento se adjunta el enlace al script para configurar la base de datos SQL Server.
 
