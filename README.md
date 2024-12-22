@@ -10,6 +10,7 @@ Para iniciar el servidor, usa el siguiente comando:
 
 ```bash
 pnpm run dev
+```
 
 ## Tecnologías
 
