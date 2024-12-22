@@ -1,7 +1,6 @@
 import { getConnections } from "../../../../config/database.js";
 import sql from "mssql";
 
-//get
 export const searchProductsByNameModel = async ({ name }) => {
     const pool = await getConnections();
     try {
