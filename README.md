@@ -1,9 +1,6 @@
 # Mi-Tiendita-Online
 
 ## Proyecto para el reto Web 360
-
-Este proyecto consiste en una tienda online que incluye autenticación de usuarios y rutas protegidas.
-
 ---
 
 ## Tecnologías
