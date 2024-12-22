@@ -22,7 +22,6 @@ export const totalIncomeMonth = async (req, res) => {
     }
 };
 
-//si en el día no hay ingresos, devolvera ni
 export const incomeToday = async (req, res) => {
     try {
         const response = await incomeTodayModel();
