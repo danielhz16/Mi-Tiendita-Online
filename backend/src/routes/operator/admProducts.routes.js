@@ -1,4 +1,4 @@
-import { newProduct, updateProduct, deactivateProduct, activateProduct, getAllProducts, addStock } from "../../controllers/operator/admProductsController.js";
+import { newProduct, updateProduct, deactivateProduct, activateProduct, getAllProducts, addStock } from "../../controllers/operator/admProducts/admProductsController.js";
 import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 import { Router } from "express";
 import multer from 'multer';

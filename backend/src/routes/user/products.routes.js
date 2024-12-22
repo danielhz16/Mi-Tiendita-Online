@@ -1,4 +1,4 @@
-import { getAviableProducts, getProductsByCategory } from "../../controllers/user/productsController.js";
+import { getAviableProducts, getProductsByCategory } from "../../controllers/user/products/productsController.js";
 import { authMiddleware } from "../../middlewares/authMiddleware.js";
 import { Router } from "express";
 

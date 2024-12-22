@@ -1,4 +1,4 @@
-import { totalIncome, totalIncomeMonth, incomeToday } from "../../controllers/operator/incomeController.js";
+import { totalIncome, totalIncomeMonth, incomeToday } from "../../controllers/operator/incomes/incomeController.js";
 import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 import { Router } from "express";
 

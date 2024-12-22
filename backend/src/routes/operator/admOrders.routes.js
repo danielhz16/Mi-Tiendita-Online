@@ -1,4 +1,4 @@
-import { addProductToOrderById, deleteProductByOrderId } from "../../controllers/operator/admOrdersContoller.js";
+import { addProductToOrderById, deleteProductByOrderId } from "../../controllers/operator/admOrders/admOrdersContoller.js";
 import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 import { Router } from "express";
 

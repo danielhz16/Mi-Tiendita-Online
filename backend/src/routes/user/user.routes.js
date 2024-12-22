@@ -1,4 +1,4 @@
-import { editUser } from "../../controllers/user/userController.js";
+import { editUser } from "../../controllers/user/user/userController.js";
 import { authMiddleware } from "../../middlewares/authMiddleware.js";
 import { Router } from "express";
 

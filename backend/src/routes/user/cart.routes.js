@@ -1,4 +1,4 @@
-import { getCart } from "../../controllers/user/cartController.js";
+import { getCart } from "../../controllers/user/cart/cartController.js";
 import { authMiddleware } from "../../middlewares/authMiddleware.js";
 import { Router } from "express";
 

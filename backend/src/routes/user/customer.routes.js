@@ -1,10 +1,10 @@
-import { newCustomers, updateCustomers } from "../../controllers/user/customerController.js";
+import { newCustomers, updateCustomer } from "../../controllers/user/customer/customerController.js";
 import { authMiddleware } from "../../middlewares/authMiddleware.js";
 import { Router } from "express";
 
 const router = Router();
 
 router.post("/newCustomer", authMiddleware, newCustomers);
-router.put("/updateCustomer", authMiddleware, updateCustomers);
+router.put("/updateCustomer", authMiddleware, updateCustomer);
 
 export default router;

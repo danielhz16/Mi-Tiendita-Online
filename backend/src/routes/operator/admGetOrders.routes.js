@@ -1,4 +1,4 @@
-import { getOrders, filterOrders } from "../../controllers/operator/AdmgetOrdersController.js";
+import { getOrders, filterOrders } from "../../controllers/operator/admGetOrders/admGetOrdersController.js";
 import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 import { Router } from "express";
 

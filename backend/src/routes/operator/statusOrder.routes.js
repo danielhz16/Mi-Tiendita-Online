@@ -1,4 +1,4 @@
-import { approveOrder, cancelOrder, updateOrderStatus } from "../../controllers/operator/statusOrdersController.js";
+import { approveOrder, cancelOrder, updateOrderStatus } from "../../controllers/operator/statusOrders/statusOrdersController.js";
 import { Router } from "express";
 
 const router = Router();

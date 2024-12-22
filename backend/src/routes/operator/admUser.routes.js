@@ -1,4 +1,4 @@
-import { suspendUser, activateUser, getUsersSuspend } from "../../controllers/operator/admUserController.js";
+import { suspendUser, activateUser, getUsersSuspend } from "../../controllers/operator/admUser/admUserController.js";
 import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 import { Router } from "express";
 

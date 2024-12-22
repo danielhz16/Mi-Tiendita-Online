@@ -1,4 +1,4 @@
-import { newCategory,  deactivateCategory, activateCategory, editCategory } from "../../controllers/operator/categoryController.js";
+import { newCategory,  deactivateCategory, activateCategory, editCategory } from "../../controllers/operator/category/categoryController.js";
 import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 import { Router } from "express";
 

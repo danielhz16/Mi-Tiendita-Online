@@ -1,4 +1,4 @@
-import { newStatus, editStatus } from "../../controllers/operator/statusController.js";
+import { newStatus, editStatus } from "../../controllers/operator/status/statusController.js";
 import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 import { Router } from "express";
 
