@@ -4,7 +4,8 @@ export const incomeTodayModel = async () => {
     const pool = await getConnections();
     try {
         const response = await pool.request().query('SELECT * FROM IncomeToday');
-        return response.recorsdet;
+        return response.recordset[0];
+   
     } catch (error) {
         throw new Error(error);
     }

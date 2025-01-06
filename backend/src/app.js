@@ -3,6 +3,7 @@ import cors from "cors";
 
 import topProducts from "./routes/general/topProdcust.routes.js";
 import searchProducts from "./routes/general/searchProducts.routes.js";
+import getCategories from "./routes/general/category.routes.js";
 
 import admCustomers from "./routes/operator/admCustumers.routes.js";
 import admGetOrders from "./routes/operator/admGetOrders.routes.js";
@@ -19,7 +20,7 @@ import customer from "./routes/user/customer.routes.js";
 import orders from "./routes/user/orders.routes.js";
 import products from "./routes/user/products.routes.js";
 import user from "./routes/user/user.routes.js";
-
+import getCategries from "./routes/user/getCategories.routes.js";
 import auth from "./routes/auth/auth.routes.js";
 
 const app = express();
@@ -29,6 +30,7 @@ app.use(express.json());
 
 app.use(topProducts);
 app.use(searchProducts);
+app.use(getCategories);
 
 app.use(admCustomers);
 app.use(admGetOrders);
@@ -45,6 +47,7 @@ app.use(customer);
 app.use(orders);
 app.use(products);
 app.use(user);
+app.use(getCategries);
 
 app.use(auth);
 

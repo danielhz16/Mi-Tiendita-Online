@@ -9,7 +9,7 @@ export const updateOrderStatusModel = async ({ id_order, new_status }) => {
             .input("id_order", sql.Int, id_order)
             .input("new_status", sql.Int, new_status)
             .execute('ChangeOrderStatus');
-        return respose;
+        return respose.recordset;
     } catch (error) {
         throw new Error(error);
     }

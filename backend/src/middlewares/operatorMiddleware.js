@@ -7,7 +7,7 @@ export const operatorMiddleware = (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
-      return res.status(400).json({ error: "Token not found or malformed" });
+      return res.status(400).json('Token no encontrado o inválido');
     }
 
     const token = authHeader.split(" ")[1];
@@ -15,11 +15,11 @@ export const operatorMiddleware = (req, res, next) => {
     req.user = decoded;
 
     if (req.user.role !== 1 || req.user.status !== 1) {
-      return res.status(403).json({ error: "Unauthorized" });
+      return res.status(403).json('Acceso denegado');
     }
 
     next();
   } catch (error) {
-    return res.status(401).json({ error: "Invalid token" });
+    return res.status(401).json('Token inválido');
   }
 };

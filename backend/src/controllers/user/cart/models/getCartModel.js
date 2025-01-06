@@ -7,8 +7,8 @@ export const getCartModel = async ({ id_user }) => {
         const response = await pool.request()
         .input('id_user', sql.Int, id_user)
         .execute('GetCart');
-        return response;
+        return response.recordset;
     } catch (error) {
-        return error;
+        throw new Error(error);
     }
 };

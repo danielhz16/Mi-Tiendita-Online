@@ -7,26 +7,26 @@ import { incomeTodayModel } from "./models/incomeTodayModel.js";
 export const totalIncome = async (req, res) => {
     try {
         const response = await totalIncomeModel();
-        res.status(200).json({ response });
+        res.status(200).json(response);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json(error.message);
     }
 };
 
 export const totalIncomeMonth = async (req, res) => {
     try {
         const response = await totalIncomeMonthModel();
-        res.status(200).json({ response });
+        res.status(200).json(response);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json(error.message);
     }
 };
 
 export const incomeToday = async (req, res) => {
     try {
         const response = await incomeTodayModel();
-        res.status(200).json({ response });
+        res.status(200).json(response);
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json(error.message);
     }
 };

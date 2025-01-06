@@ -4,6 +4,14 @@
 ---
 
 #importante
+Ya que solo el operador puede crear usuarios dejo credeciales de prueba aquí
+ ##operador
+ email: operador2025@email.com
+ contraseña: hola@123
+ 
+ ##usuario: 
+ email: usuario2025@email.com
+ contraseña: hola@123
 
 **pnpm**: Este proyecto utiliza pnpm como gestor de paquetes.  
 Para iniciar el servidor, usa el siguiente comando:
@@ -14,6 +22,20 @@ pnpm run dev
 
 ## Tecnologías
 
+### Frontend:
+- **React**: Para la interfaz de usuario.
+- **jsPdf**: Para la generacion de comprobantes de pago.
+- **Styled-Components**: Para manejar estilos dinamicamente.
+- **Lottie-web**: Para animaciones.
+- **React Hook-Form**: Para el envío de formularios.
+- **Yup**: Para validar los formularios.
+- **React Hot Toast**: Para notificaciones.
+- **Axios**: Para realizar solicitudes al backend.
+- **PrimeReact, PrimeFlex, PrimeIcons**: Librería de componentes.
+- **react-international-phone**: Para facilitar el ingreso del número de telefono.
+- **React Drop Zone**: para seleccionar fotos.
+- **Recharts**: Para generar gráficos.
+
 ### Backend:
 - **Express.js**: Framework para Node.js utilizado para crear el servidor y manejar las rutas.
 - **MSSQL**: Base de datos SQL Server conectada a través del paquete **mssql**.
@@ -21,6 +43,22 @@ pnpm run dev
 - **Bcrypt**: Librería para cifrar y verificar contraseñas de manera segura.
 - **Middleware**: Rutas protegidas con autenticación y control de roles de usuario.
 - **Multer**: Middleware para manejar la subida de imágenes y otros archivos.
+ 
+
+##características
+ - modulos: usuario / operador.
+ - Temas Claro y obscuro.
+ - Comprobantes de pago.
+ - animaciones.
+ - refresh de token jwt para notificar al usuario si es suspendido.
+ - los prodictos son ordenados por categoria , esto se maneja automaticamente por lo que al crear una nueva 
+  categoría y agrgegar productos se agrgara su sección automaticamente.
+ - Autocompletado de dirección de entrega.
+ - Selección manual o arrastrando imagen.
+ - Gráficos de productos más vendidos, usuarios con más compras.
+ - solo un operador puede crear nuevos usuarios.
+ - Se guardan url de las fotos usando IMGUR.
+ - Solo permite el registro de mayores de edad.
 
 ## Probar Backend
 Para asegurar la facilidad en las pruebas, se ha nombrado a los 
@@ -42,25 +80,12 @@ export const getCart = async (req, res) => {
  ##En este caso la ruta es:
   solicitud get
   http://localhost:3000/getCart
+
+  ##
   
-### Recomendación:  
-- Reemplaza las credenciales del archivo `.env` (que ya incluye configuraciones predeterminadas para SQL Server al usar Docker) por las correctas correspondientes a tu base de datos SQL Server. Al final del documento se adjunta el enlace al script para configurar la base de datos SQL Server.
-
-### Pasos recomendados a seguir:
-1. Comienza probando las rutas de autenticación (`/auth`). Al completar este paso, utiliza el token obtenido al registrarte o iniciar sesión como usuario (rol 2).
-2. Continúa probando las rutas generales (`/general`).
-3. Luego, prueba las rutas específicas de usuario (`/user`).
-4. Después de probar las rutas de usuario, reemplaza el token actual por el token obtenido al iniciar sesión o registrarte como operador (rol 1).
-5. Finalmente, prueba las rutas específicas de operador (`/operator`).
-
-
 ## Instalación
 
 1. Clona este repositorio:
    ```bash
    https://github.com/danielhz16/Mi-Tiendita-Online.git
-
-2.Script de la base de datos 
-https://drive.google.com/file/d/1MgHGoQOn2FYdmQEj1JFVuZJsP5T7Cr64/view?usp=drive_link](https://drive.google.com/file/d/1XbDtVE-0ZEAsXA6MhxhQapbANYTX9y1A/view?usp=drive_link
-   
 

@@ -1,10 +1,10 @@
-import { approveOrder, cancelOrder, updateOrderStatus } from "../../controllers/operator/statusOrders/statusOrdersController.js";
+import { approveOrder, updateOrderStatus } from "../../controllers/operator/statusOrders/statusOrdersController.js";
 import { Router } from "express";
+import { operatorMiddleware } from "../../middlewares/operatorMiddleware.js";
 
 const router = Router();
 
-router.post("/approveOrder", approveOrder);    
-router.post("/cancelOrder", cancelOrder);
-router.put("/updateOrderStatus", updateOrderStatus);
+router.post("/approveOrder",operatorMiddleware, approveOrder);    
+router.patch("/updateOrderStatus/:id_order", operatorMiddleware, updateOrderStatus);
 
 export default router;

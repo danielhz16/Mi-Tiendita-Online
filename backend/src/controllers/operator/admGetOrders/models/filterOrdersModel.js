@@ -6,7 +6,7 @@ export const filterOrdersModel = async ({status_id}) => {
     try {
         const response = await pool
             .request()
-            .input("status_id", sql.Int, status_id)
+            .input("status_ids", sql.NVarChar, status_id)
             .execute('GetOrdersFromStatus');
         return response.recordset;
     } catch (error) {

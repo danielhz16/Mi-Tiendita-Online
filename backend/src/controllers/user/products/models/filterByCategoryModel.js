@@ -9,7 +9,6 @@ export const filterByCategoryModel = async ({ category }) => {
             .execute('filterByCategory');
         return response.recordset;
     } catch (error) {
-        console.log(error);
         throw new Error('Error getting products by category');
     }
 };

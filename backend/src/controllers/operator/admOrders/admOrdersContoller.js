@@ -9,7 +9,7 @@ export const addProductToOrderById = async (req, res) => {
     const { id_order, product_id, quantity } = req.body;
     try {
         const response = await addProductModel({ id_order, product_id, quantity });
-        res.status(200).json({ response: "se agrego con exito" });
+        res.status(200).json('se agrego con exito');
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
@@ -18,12 +18,11 @@ export const addProductToOrderById = async (req, res) => {
 //post
 export const deleteProductByOrderId  = async (req, res) => {
     const { id_order, product_id, quantity } = req.body;
-    const pool = await getConnections();
     try {
         const response = await deleteProductModel({ id_order, product_id, quantity });
-        res.status(200).json({ response: "se elimino con exito" });
+        res.status(200).json('Se elimino con exito');
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json(error.message);
     }
 };
 
