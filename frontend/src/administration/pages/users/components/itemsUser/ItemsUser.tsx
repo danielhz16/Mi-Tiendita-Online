@@ -34,6 +34,7 @@ const ItemsUser: React.FC<ItemsUserProps> = ({ data }) => {
       <td>{formatDate(data.birth_date)}</td>
       <td>{formatDate(data.date_at)}</td>
       <td>{<Tag severity={userActive === 'Activo' ? 'success' : 'danger'}>{userActive}</Tag>}</td>
+      <td>{data.status__id_status === 1 ? 'Operador' : 'Usuario'}</td>
      </tr>
     </>
   )

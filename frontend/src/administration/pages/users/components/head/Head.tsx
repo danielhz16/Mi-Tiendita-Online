@@ -7,7 +7,8 @@ const Head: React.FC = () => {
                 <th>Nombre</th>
                 <th>Fecha de nacimiento</th>
                 <th>Fecha de registro</th>
-                <th className="border-round-right">Estado</th>
+                <th>Estado</th>
+                <th className="border-round-right">Rol</th>
             </tr>
         </thead>
     );
