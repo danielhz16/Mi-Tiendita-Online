@@ -21,27 +21,31 @@ const Invoice: React.FC = () => {
   const { data: products } = useAxios<ProductsInterface[]>(
     `${import.meta.env.VITE_URL_BACKEND}/getOrderDetails/${id_order}`
   );
-
+ console.log(products)
   const generatePDF = () => {
     const doc = new jsPDF();
     doc.setFontSize(20);
     doc.setTextColor(0, 123, 255); // Color para el título
-    doc.text('Factura', 105, 20, null, null, 'center'); // Centrar título
+    doc.text('Factura', 105, 20, null, null, 'center');
 
     doc.setFontSize(12);
-    doc.setTextColor(0, 0, 0); // Color negro para texto normal
+    doc.setTextColor(0, 0, 0);
     doc.text(`ID de la orden: ${main?.id_order}`, 10, 30);
     doc.text(`A nombre de: ${main?.full_name}`, 10, 40);
 
     const tableStartY = 50; // Ajustar la tabla sin el logo
 
     const tableColumn = ['Producto', 'Cantidad', 'Precio', 'Subtotal'];
-    const tableRows = products?.map((product) => [
-      product.name,
-      product.quantity,
-      `${product.price} GTQ`,
-      `${product.subtotal} GTQ`,
-    ]) || [];
+    const tableRows =
+    Array.isArray(products) && products.length > 0
+      ? products.map((product) => [
+          product.name,
+          product.quantity,
+          `${product.price} GTQ`,
+          `${product.subtotal} GTQ`,
+        ])
+      : [];
+  
 
     doc.autoTable({
       head: [tableColumn],

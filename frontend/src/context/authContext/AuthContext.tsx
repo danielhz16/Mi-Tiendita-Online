@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { AuthContextType } from "./interfaces/AuthContextType";
 import axios from "axios";
-import { decodeToken } from "../../auth/token/decode/decodeToken";
+import { getToken } from "../../general/functions/getToken";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -21,17 +21,21 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setToken(null);
   };
 
- const refreshToken = async () => {
-  const token = localStorage.getItem("token");
-  const tokenDecoded = decodeToken(token!);
-  axios.post(`${import.meta.env.VITE_URL_BACKEND}/refreshToken/${tokenDecoded.id}`)
-  .then(res => {
-    setToken(res.data.token);
-    localStorage.setItem("token", res.data.token);
-    console.log(res.data.token);
-  })
-  .catch(err => console.log(err));
- };
+  const refreshToken = async () => {
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_URL_BACKEND}/refreshToken`,
+        {},
+        { headers: { Authorization: getToken() } } 
+      );
+      setToken(res.data.token);
+      localStorage.setItem("token", res.data.token);
+      console.log(res.data.token);
+    } catch (err) {
+      console.error("Error al refrescar el token:", err);
+    }
+  };
+  
 
  useEffect(() => { refreshToken() }, []);
 

@@ -1,3 +1,4 @@
+
 import { ItemsProps } from "../../../../components/bodyTable/interfaces/ItemsProps";
 import { Tag } from "primereact/tag";
 import { useState, useRef, useEffect } from "react";
@@ -42,6 +43,7 @@ const ItemCategories: React.FC<ItemsProps> = ({ data }) => {
           originalName={data.name_category}
           id={data.id_category_products}
           close={toggleUpdate}
+
         />
       )}
       <tr key={data.id_category_products} ref={optionsRef}>

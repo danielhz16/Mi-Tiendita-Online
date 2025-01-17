@@ -9,6 +9,7 @@ import { Button } from 'primereact/button';
 import { Overlay } from '../../../general/styledComponents/Overlay';
 import { Modal } from '../../../general/styledComponents/Modal';
 import { Flex } from '../../../general/styledComponents/Flex';
+import { useCategories } from '../../../context/categoryContext/categoryContext';
 
 
 const UpdateCategory: React.FC<UpdateCategoryInterface> = ({id, originalName, close}) => {
@@ -16,16 +17,18 @@ const UpdateCategory: React.FC<UpdateCategoryInterface> = ({id, originalName, cl
   const { register, handleSubmit, formState: { errors } } = useForm<UpdateCategoryInterface>({
     resolver: yupResolver(updateCategorySchema)
   });
-
-  const sussecc = () => {
-    close;
-    window.location.reload();
+  const { changeName } = useCategories();
+  const  submit = (data: UpdateCategoryInterface) => {
+    put(data,() => {
+       changeName(Number(id), data.name),
+       close && close();
+    });
   }
   return (
     <>
     <Overlay />
     <Modal>
-      <form onSubmit={handleSubmit(data => put( data, sussecc ))}>
+      <form onSubmit={handleSubmit(submit)}>
         <h3>{originalName}</h3>
        <FloatLabel className='mb-auto'>
         <InputText

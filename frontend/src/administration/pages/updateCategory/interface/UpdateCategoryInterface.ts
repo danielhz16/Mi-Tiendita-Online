@@ -3,4 +3,5 @@ export interface UpdateCategoryInterface {
     id?: number;
     originalName?: string;
     close?: () => void;
+    sussecc?: () => void;
 }

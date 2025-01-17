@@ -22,18 +22,16 @@ const User: React.FC = () => {
   const navigate = useNavigate();
   const { put } = usePut({url: `${import.meta.env.VITE_URL_BACKEND}/editUser`, headers: { "Content-Type": "application/json" }});
   const { data } = useAxios<UpdateUserInterface>(`${import.meta.env.VITE_URL_BACKEND}/getUser`);
+
   const { register, handleSubmit, formState: { errors } , control, reset} = useForm<UpdateUserInterface>({
     resolver: yupResolver(updateSchema)
   });
   useEffect(() => {
-    if (Array.isArray(data) && data.length > 0) {
-      const user = data[0];
       reset({
-        full_name: user.full_name || '',
-        email: user.email || '',
-        birth_date: user.birth_date ? new Date(user.birth_date) : undefined,
-      });
-    }
+        full_name: data?.full_name || '',
+        email: data?.email || '',
+        birth_date: data?.birth_date ? new Date(data?.birth_date) : undefined,
+      });  
   }, [data, reset]);
   useEffect(() => { handleErrors(errors) }, [errors]);
   

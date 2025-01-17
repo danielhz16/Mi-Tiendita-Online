@@ -1,0 +1,3 @@
+2. Clientes: Este módulo solo lo pueden ver
+los operadores, permitirá ver el histórico de clientes y sus datos registrados,
+permitirá agregar, editar o inactivar a un cliente.

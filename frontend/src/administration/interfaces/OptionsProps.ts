@@ -3,5 +3,6 @@ export interface OptionsProps {
   funSuccess: () => void;
   name: string;
   status: string;
-  code: string;
+  code?: string;
+  command? : () => void;
 }

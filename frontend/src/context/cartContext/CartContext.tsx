@@ -4,20 +4,24 @@ import useAxios from "../../general/hooks/useAxios/useAxios";
 import { ReactNode } from "react";
 import { ProdcutCartInterface } from "../../user/interfaces/ProductCartInterface";
 import { CartContextProps } from "./interfaces/CartContextProps";
+import axios from "axios";
+import { getToken } from "../../general/functions/getToken";
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProveider = ({ children }: { children: ReactNode }) => {
   const { post } = usePost({ url: `${import.meta.env.VITE_URL_BACKEND}/UpdateQuantity` });
   const { post: addProduct } = usePost({ url: `${import.meta.env.VITE_URL_BACKEND}/addProductToCart` });
-  const { data, reloadData } = useAxios<ProdcutCartInterface[]>(`${import.meta.env.VITE_URL_BACKEND}/getCart`);
+  const { data } = useAxios<ProdcutCartInterface[]>(`${import.meta.env.VITE_URL_BACKEND}/getCart`);
   const [dataResult, setDataResult] = useState<ProdcutCartInterface[]>([]);
+
 
   useEffect(() => {
     if (Array.isArray(data)) {
       setDataResult(data);
     }
   }, [data]);
+  
 
   const addProductToCart = (id: number, quantity: number, product: object) => {
     const existingProductIndex = dataResult.findIndex((item) => item.id === id);
@@ -36,19 +40,24 @@ export const CartProveider = ({ children }: { children: ReactNode }) => {
     addProduct({ product_id: id, quantity });
   };
 
-  const updateData = ( id: number, quantity: number ) => {
-    const submitData = { product_id: id, quantity: quantity };
-    post(submitData);
-
-    if (quantity === 0) {
-      reloadData()
-      return 
-     }
-      const updatedData = dataResult.map((item) =>
-        item.id === id ? { ...item, quantity } : item
+  const updateData = async (id: number, quantity: number) => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_URL_BACKEND}/UpdateQuantity`,
+        { product_id: id, quantity },
+        {
+          headers: {
+            Authorization: getToken(),
+          },
+        }
       );
-      setDataResult(updatedData);
+      console.log(response.data);
+      setDataResult(response.data); 
+    } catch (err) {
+      console.error("Error al actualizar la cantidad:", err);
+    }
   };
+  
  
   const clearCart = () => {
     dataResult.forEach((item) => {

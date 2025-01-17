@@ -5,4 +5,5 @@ export interface UserInterface {
     birth_date: string;
     date_at: string;
     status__id_status: number;
+    role__id_role: number;
 };

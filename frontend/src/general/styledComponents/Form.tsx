@@ -4,6 +4,9 @@ export const Form = styled.form`
   place-items: center;
   background-color: ${({ theme }) => theme.colors.bg};
   min-height: 25rem;
+  .height {
+    height: 100rem !important;
+  }
    input {
     position: relative;
    }

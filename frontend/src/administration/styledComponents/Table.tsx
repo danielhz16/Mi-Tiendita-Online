@@ -36,9 +36,16 @@ const Table = styled.table`
     &:hover {
       background-color: ${({ theme }) => theme.colors.itemSecondary};
     }
+    &.no-result {
+      background-color: transparent;
+      width: 80rem;
+    }
   }
   .info {
     text-align: center;
+  }
+  input {
+    width: 100%;
   }
 `;
 export default Table;

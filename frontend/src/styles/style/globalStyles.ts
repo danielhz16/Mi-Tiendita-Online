@@ -11,6 +11,7 @@ body, html, #root {
 body {
   overflow: hidden;
 }
+
 li {
   list-style: none;
 }

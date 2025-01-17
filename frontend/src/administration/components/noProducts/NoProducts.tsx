@@ -3,8 +3,8 @@ import { NotResults } from "./anim/notResults/NotResults"
 
 const NoProducts: React.FC = () => (
     <div>
-    <NoProductsMessage>Sin Resultados</NoProductsMessage>
-    <NotResults />
+        <NoProductsMessage>Sin Resultados</NoProductsMessage>
+        <NotResults />
     </div>
 );
 

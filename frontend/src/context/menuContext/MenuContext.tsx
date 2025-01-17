@@ -15,8 +15,6 @@ export const MenuProvider = ({ children }: { children: ReactNode }) => {
 
 export const useMenuContext = () => {
   const context = useContext(MenuContext);
-  if (context === undefined) {
-    throw new Error("useGlobalContext must be used within a GlobalProvider");
-  }
+  if (!context) throw new Error("useGlobalContext must be used within a GlobalProvider");
   return context;
 };

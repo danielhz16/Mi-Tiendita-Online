@@ -13,7 +13,6 @@ export const useAxios = <T>(url: string): AxiosInterface<T> => {
   
 
   useEffect(() => {
-    console.log(url);
     if (getToken()) {
       axios.get(url, {
         headers: {
@@ -39,7 +38,7 @@ export const useAxios = <T>(url: string): AxiosInterface<T> => {
     }
   }, [reload]); 
 
-  return { data, loading, error, reloadData }; 
+  return { data, loading, error, reloadData, setData }; 
 };
 
 export default useAxios;

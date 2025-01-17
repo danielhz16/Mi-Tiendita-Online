@@ -2,16 +2,16 @@ import Table from '../../styledComponents/Table'
 import { Page } from '../../../general/styledComponents/Page'
 import Head from './components/head/Head'
 import BodyTable from '../../components/bodyTable/BodyTable';
-import useAxios from '../../../general/hooks/useAxios/useAxios';
 import ItemCategories from './components/item/ItemCategories';
 import { useState } from 'react';
 import { search } from '../../functions/search';
 import { InputText } from 'primereact/inputtext';
 import { useEffect } from 'react';
 import NoProducts from '../../components/noProducts/NoProducts';
+import { useCategories } from '../../../context/categoryContext/categoryContext';
 
 const Categories = () => {
-  const { data, loading, error } = useAxios<any[]>(`${import.meta.env.VITE_URL_BACKEND}/getAllCategories`);
+  const { data, loading, error } = useCategories();
     const [filteredData, setFilteredData] = useState(data);
     useEffect(() => { setFilteredData(data)}, [data]);
     if (loading) return <div>Loading...</div>;
@@ -35,7 +35,7 @@ const Categories = () => {
           />
           <Head />
           {filteredData?.length === 0 && <NoProducts />}
-          <BodyTable data={filteredData} Item={ItemCategories} />
+          <BodyTable data={filteredData} Item={ItemCategories} lenght={3}/>
         </Table>
       </Page>
     )  

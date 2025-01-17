@@ -22,6 +22,7 @@ import { useError } from "../../../general/hooks/useError/useError";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../../routes/routes";
 import { useParams } from "react-router-dom";
+import { FormCustomer } from "./styledComponents/FormCustomer";
 
 const Customer: React.FC = () => {
   const {complete} = useParams();
@@ -63,9 +64,9 @@ const Customer: React.FC = () => {
 
   return (
     <Page>
-      <Form onSubmit={handleSubmit(submitForm)}>
+      <FormCustomer onSubmit={handleSubmit(submitForm)} className="height" >
+        <div>
         <Delivery />
-        <DivForm>
           <Section>
             <label>Nombre Legal</label>
             <InputText 
@@ -73,7 +74,6 @@ const Customer: React.FC = () => {
               {...register("legal_name")} 
               className={errors.legal_name ? "p-invalid" : ""} 
             />
-            {errors.legal_name && <span className="p-error">{errors.legal_name.message}</span>}
           </Section>
 
           <Section>
@@ -83,7 +83,6 @@ const Customer: React.FC = () => {
               {...register("trade_name")} 
               className={errors.trade_name ? "p-invalid" : ""} 
             />
-            {errors.trade_name && <span className="p-error">{errors.trade_name.message}</span>}
           </Section>
 
           <Section>
@@ -99,12 +98,12 @@ const Customer: React.FC = () => {
                     onChange={field.onChange}
                     className={errors.phone ? "p-invalid" : ""}
                   />
-                  {errors.phone && <span className="p-error">{errors.phone.message}</span>}
                 </>
               )}
             />
           </Section>
-
+          </div>
+          <div>
           <Section>
             <label>Correo</label>
             <InputText 
@@ -112,10 +111,7 @@ const Customer: React.FC = () => {
               {...register("email")} 
               className={errors.email ? "p-invalid" : ""} 
             />
-            {errors.email && <span className="p-error">{errors.email.message}</span>}
-          </Section>
-        </DivForm>
-        <DivForm>
+          </Section> 
           <Section>
             <label htmlFor="Departamento">Departamento</label>
             <Dropdown
@@ -156,7 +152,7 @@ const Customer: React.FC = () => {
             </>
           )}
 
-      <Section>
+<Section>
             <label>Dirección</label>
             <InputTextarea 
               {...register("delivery_address")} 
@@ -166,14 +162,13 @@ const Customer: React.FC = () => {
             />
             {errors.delivery_address && <span className="p-error">{errors.delivery_address.message}</span>}
           </Section>
-        </DivForm>
-        <DivForm>
         <Flex>
           <Button label={existingInfo  ?  "Actualizar" : "Guardar" } 
           type="submit" icon="pi pi-check" 
           loading={loadingPut || loadingPost}
           />
-          <Button label="Cancelar" type="button" icon="pi pi-times" severity="danger" onClick={() => navigate(routes.home)} />
+          <Button label="Cancelar" type="button" icon="pi pi-times" severity="danger" onClick={() => navigate(routes.home)}
+          className="mt-2" />
         </Flex>
         {existingInfo && complete === 'true' &&	 (
          <Button 
@@ -184,8 +179,8 @@ const Customer: React.FC = () => {
        />
        
           )}
-        </DivForm>
-      </Form>
+        </div>
+      </FormCustomer>
     </Page>
   );
 };

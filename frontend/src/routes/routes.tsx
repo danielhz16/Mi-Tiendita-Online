@@ -27,5 +27,7 @@ export const routesOperator = {
     users : "/usuarios",
     account: "/cuenta",
     ordersList: "/listaDeOrdenes",
-    NewCategory: "/nuevaCategoria"
+    NewCategory: "/nuevaCategoria",
+    customers: "/clientes",
+    editCustomer: "/editarCliente"
 };

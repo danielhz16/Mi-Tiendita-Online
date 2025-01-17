@@ -6,10 +6,10 @@ import { formatDate } from '../../../../../general/functions/formatDate';
 
 
 const ItemsUser: React.FC<ItemsUserProps> = ({ data }) => {
-  const [userActive, setUserActive] = useState(data.status__id_status === 1 ? 'Activo' : 'Susendido');
+  const [userActive, setUserActive] = useState(data.status__id_status === 1004 ? 'Susependido' : 'Activo');
   const [options, setOptions] = useState<number | null>(null);
   const optionRef = useRef<HTMLTableRowElement>(null);
-  const toggleStatus = () => setUserActive((prev) => (prev === 'Activo' ? 'Susendido' : 'Activo'));
+  const toggleStatus = () => setUserActive((prev) => (prev === 'Activo' ? 'Suspendido' : 'Activo'));
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (optionRef.current && !optionRef.current.contains(event.target as Node)) {
@@ -21,7 +21,7 @@ const ItemsUser: React.FC<ItemsUserProps> = ({ data }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   })
-
+  
   return (
     <>
      <tr ref={optionRef}>
@@ -34,7 +34,7 @@ const ItemsUser: React.FC<ItemsUserProps> = ({ data }) => {
       <td>{formatDate(data.birth_date)}</td>
       <td>{formatDate(data.date_at)}</td>
       <td>{<Tag severity={userActive === 'Activo' ? 'success' : 'danger'}>{userActive}</Tag>}</td>
-      <td>{data.status__id_status === 1 ? 'Operador' : 'Usuario'}</td>
+      <td>{data.role__id_role === 1 ? 'Operador' : 'Usuario'}</td>
      </tr>
     </>
   )

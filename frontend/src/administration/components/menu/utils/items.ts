@@ -13,6 +13,11 @@ export const items = [
         icon: 'pi pi-chart-line'
     },
     {
+        name: 'Clientes',
+        link: routesOperator.customers,
+        icon: 'pi pi-users'
+    },
+    {
         name: 'Nuevo Producto',
         link: routesOperator.newProduct,
         icon: 'pi pi-plus'

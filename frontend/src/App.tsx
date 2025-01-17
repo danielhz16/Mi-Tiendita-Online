@@ -6,6 +6,7 @@ import { GlobalStyle } from "./styles/style/globalStyles";
 import { MenuProvider } from "./context/menuContext/MenuContext";
 import { CartProveider } from "./context/cartContext/CartContext";
 import { ProductsProvider } from "./context/productsCotext/ProductsContext";
+import { CategoriesProvider } from "./context/categoryContext/categoryContext";
 
 
 import { NotFound } from "./general/anim/notFound/NotFound";
@@ -37,6 +38,8 @@ import AddStock from "./administration/pages/addStock/AddStock";
 import OrdersList from "./administration/pages/ordersList/OrdersList";
 import Users from "./administration/pages/users/Users";
 import NewCategory from "./administration/pages/newCategory/NewCategory";
+import Customers from "./administration/pages/cutomer/Customer";
+import EditCustomer from "./administration/pages/editCustomer/EditCustomer";
 
 import { routes } from "./routes/routes";
 import { routesOperator } from "./routes/routes";
@@ -58,6 +61,7 @@ function App() {
         <MenuProvider>
           <CartProveider>
            <ProductsProvider>
+            <CategoriesProvider>
             <GlobalStyle />
             <Toaster />
             <BrowserRouter>
@@ -101,6 +105,8 @@ function App() {
                   <Route path={routesOperator.ordersList} element={<OrdersList />} />
                   <Route path={routesOperator.users} element={<Users />} />
                   <Route path={routesOperator.NewCategory} element={<NewCategory />} />
+                  <Route path={routesOperator.customers} element={<Customers />} />
+                  <Route path={`${routesOperator.editCustomer}/:id`} element={<EditCustomer />} />
                 </Route>
                 <Route path="/" element={<Root />} />
                 <Route path="*" element={<Navigate to="/404" />} />
@@ -109,6 +115,7 @@ function App() {
                 <Route path={routes.suspend} element={<Suspend />} />
               </Routes>
             </BrowserRouter>
+            </CategoriesProvider>
            </ProductsProvider>
           </CartProveider>
         </MenuProvider>

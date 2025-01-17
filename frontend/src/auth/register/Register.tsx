@@ -21,6 +21,7 @@ import { useError } from "../../general/hooks/useError/useError";
 import { RegisterAnim } from "./anim/registerAnim/RegisterAnim";
 import {error } from "../../general/notifications/result";
 import { useEffect } from "react";
+import { getToken } from "../../general/functions/getToken";
 
 
 const Register = () => {
@@ -32,14 +33,18 @@ const Register = () => {
   });
  
   useEffect(() => {handleErrors(errors)}, [errors])
-
   const onSubmit: SubmitHandler<RegisterInterface> = (data) => {
     axios
-      .post(`${import.meta.env.VITE_URL_BACKEND}/register`, data)
+      .post(`${import.meta.env.VITE_URL_BACKEND}/register`, data, {
+        headers: {
+          authorization: getToken(), 
+        },
+      })
       .then((res) => login(res.data.token))
       .then(() => navigate("/"))
-      .catch((e) => error(e.response.data || "Error al registrar"));
+      .catch((e) => error(e.response?.data || "Error al registrar"));
   };
+  
 
   return (
     <PageComplete> 

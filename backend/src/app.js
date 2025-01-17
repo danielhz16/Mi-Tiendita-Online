@@ -1,54 +1,49 @@
 import express from "express";
 import cors from "cors";
+import auth from "./auth/routes/auth.routes.js";
 
-import topProducts from "./routes/general/topProdcust.routes.js";
-import searchProducts from "./routes/general/searchProducts.routes.js";
-import getCategories from "./routes/general/category.routes.js";
 
-import admCustomers from "./routes/operator/admCustumers.routes.js";
-import admGetOrders from "./routes/operator/admGetOrders.routes.js";
-import admOrders from "./routes/operator/admOrders.routes.js";
-import admProducts from "./routes/operator/admProducts.routes.js";
-import admUser from "./routes/operator/admUser.routes.js";
-import category from "./routes/operator/category.routes.js";
-import income from "./routes/operator/income.routes.js";
-import status from "./routes/operator/status.routes.js";
-import statusOrder from "./routes/operator/statusOrder.routes.js";
+import search from "./general/search/routes/search.routes.js";
+import topProducts from "./general/top/routes/topProducts.routes.js";
 
-import cart from "./routes/user/cart.routes.js";
-import customer from "./routes/user/customer.routes.js";
-import orders from "./routes/user/orders.routes.js";
-import products from "./routes/user/products.routes.js";
-import user from "./routes/user/user.routes.js";
-import getCategries from "./routes/user/getCategories.routes.js";
-import auth from "./routes/auth/auth.routes.js";
+import admCustomers from "./operator/admCustomers/routes/admCustomer.routes.js";
+import admOrders from "./operator/admOrders/routes/admOrders.routes.js";
+import admPrducts from "./operator/admProducts/routes/admProducts.routes.js";
+import admUsers from './operator/admUser/routes/admUser.routes.js';
+import admCategories from './operator/category/routes/category.routes.js';
+import income from './operator/Incomes/routes/income.routes.js';
+import orderStatus from './operator/statusOrders/routes/statusOrders.routes.js'
+
+import cart from './user/cart/routes/cart.routes.js';
+import getCategories from './user/getCategories/routes/getCategories.routes.js';
+import customer from './user/customer/routes/customer.routes.js';
+import orders from './user/orders/routes/orders.routes.js';
+import products from './user/products/routes/products.routes.js';
+import user from './user/user/routes/user.routes.js';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use(topProducts);
-app.use(searchProducts);
+app.use(auth);
 app.use(getCategories);
+app.use(search);
+app.use(topProducts);
 
 app.use(admCustomers);
-app.use(admGetOrders);
 app.use(admOrders);
-app.use(admProducts);
-app.use(admUser);
-app.use(category);
+app.use(admPrducts);
+app.use(admUsers);
+app.use(admCategories);
 app.use(income);
-app.use(status);
-app.use(statusOrder);
+app.use(orderStatus);
 
 app.use(cart);
+app.use(getCategories);
 app.use(customer);
 app.use(orders);
 app.use(products);
 app.use(user);
-app.use(getCategries);
-
-app.use(auth);
 
 export default app;
